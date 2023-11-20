@@ -5,21 +5,19 @@
   padding: 0;
 }
 
-.main {
+.carnet {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-
-.main__repertoir {
+.carnet .title {
   background-color: rgb(8, 128, 214);
   height: 70px;
   width: 100%;
   padding-left: 30px;
   gap: 24px;
 }
-
-.main__repertoir__titre {
+.carnet .title span {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,7 +30,7 @@
   color: rgb(255, 255, 255);
 }
 
-.main__formulaire-contact {
+.main {
   display: flex;
   flex-direction: row;
   height: 1007px;
@@ -43,13 +41,12 @@
   padding-right: 100px;
 }
 
-.main__formulaire-contact__formulaire {
+.form {
   height: 1007px;
   width: 40%;
   border: 1px solid rgb(196, 196, 196);
 }
-
-.main__formulaire-contact__titre1 {
+.form .form-title {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -61,8 +58,7 @@
   font-weight: 700;
   color: white;
 }
-
-.main__formulaire-contact__form {
+.form .form-contact {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
@@ -70,38 +66,17 @@
   gap: 20px;
   height: 808px;
 }
-
-input[type=text] {
+.form .form-contact input {
   height: 45px;
   width: 100%;
   border: 1px solid rgb(196, 196, 196);
 }
-
-input[type=number] {
-  height: 45px;
-  width: 100%;
-  border: 1px solid rgb(196, 196, 196);
-}
-
-input[type=tel] {
-  height: 45px;
-  width: 100%;
-  border: 1px solid rgb(196, 196, 196);
-}
-
-input[type=email] {
-  height: 45px;
-  width: 100%;
-  border: 1px solid rgb(196, 196, 196);
-}
-
-textarea {
+.form .form-contact textarea {
   width: 100%;
   height: 115px;
   border: 1px solid rgb(196, 196, 196);
 }
-
-.drag-drop {
+.form .form-contact .drag-drop {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -115,24 +90,20 @@ textarea {
   width: 100%;
   border: 1px dashed rgb(196, 196, 196);
 }
-
-label {
+.form .form-contact label {
   font-weight: 500;
   font-size: 16px;
   font-family: "poppins";
   color: rgb(8, 128, 214);
 }
-
-.button {
+.form .form-contact .btn {
   display: flex;
   flex-direction: row;
   gap: 36px;
   height: 44px;
   width: 302px;
-  padding-left: 20px;
 }
-
-.button__creer {
+.form .form-contact .btn .create {
   width: 135px;
   height: 44px;
   background-color: rgb(8, 128, 214);
@@ -141,8 +112,7 @@ label {
   font-weight: 500;
   color: white;
 }
-
-.button__reinit {
+.form .form-contact .btn .reinit {
   width: 131px;
   height: 44px;
   background-color: rgb(255, 56, 56);
@@ -152,13 +122,11 @@ label {
   color: white;
 }
 
-.main__formulaire-contact__contact-list {
+.contact-list {
   height: 660px;
   width: 60%;
-  border: 1px solid rgb(196, 196, 196);
 }
-
-.main__formulaire-contact__titre2 {
+.contact-list span {
   display: flex;
   flex-direction: row;
   justify-content: center;

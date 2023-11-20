@@ -7,30 +7,29 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="main">
-        <div class="main__repertoir">
-            <span class="main__repertoir__titre">Répertoire des contacts </span>
+    <div class="carnet">
+        <div class="title">
+            <span>Répertoire des contacts </span>
         </div>
     
-        <div class="main__formulaire-contact">
-            <div class="main__formulaire-contact__formulaire">
-               <span class="main__formulaire-contact__titre1">Formulaire de contact</span>
-               <form class="main__formulaire-contact__form">
+        <div class="main">
+            <div class="form">
+               <span class="form-title">Formulaire de contact</span>
+               <form class="form-contact">
                 <br><label for="prenom">Prénom</label><input id="prenom" type="text">
                 <label for="nom">Nom</label><input id="nom" type="text">
                 <label for="tel">Télépone</label><input id="tel" type="tel">
                 <label for="groupe">Groupe</label><input  id="groupe" type="number">
                 <label for="bio">Bio</label><textarea name="bio" id="bio" cols="30" rows="10"></textarea>
-                <span ondragover="p()" ondrop="p()" class="drag-drop">Déposer la photo <br>ici</span>
-               </form><br>
-               <div class="button">
-                <button class="button__creer">Créer</button>
-                <button class="button__reinit">Réinit</button>
-               </div>
-    
+                <span ondragover="p()" ondrop="p()" class="drag-drop">Déposer la photo <br>ici</span><br>
+                <div class="btn">
+                    <button class="create">Créer</button>
+                    <button class="reinit">Réinit</button>
+                </div>
+               </form>
             </div>
-            <div class="main__formulaire-contact__contact-list">
-                <span  class="main__formulaire-contact__titre2">Liste des contacts </span>
+            <div class="contact-list">
+                <span>Liste des contacts </span>
                 <ul>
                     
                 </ul>
