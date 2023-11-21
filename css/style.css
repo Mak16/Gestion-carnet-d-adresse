@@ -3,12 +3,14 @@
 * {
   margin: 0;
   padding: 0;
+ 
 }
 
 .carnet {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
 }
 .carnet .title {
   background-color: rgb(8, 128, 214);

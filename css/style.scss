@@ -5,12 +5,14 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .carnet{
     display: flex;
     flex-direction: column;
     gap:15px;
+    width: 100%;
     .title{
 
         background-color: rgba(8, 128, 214, 1);
