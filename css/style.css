@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 @media all and (max-width: 850px) {
   * {
@@ -17,6 +18,13 @@
   flex-direction: column;
   gap: 15px;
   width: 100%;
+}
+@media all and (max-width: 850px) {
+  .carnet {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+  }
 }
 .carnet .title {
   background-color: rgb(8, 128, 214);

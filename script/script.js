@@ -3,6 +3,7 @@ let nom = document.querySelector('#nom');
 let tel = document.querySelector('#tel');
 let groupe = document.querySelector('#groupe');
 let bio = document.querySelector('#bio');
+let file= document.querySelector('#file');
 let btn_creer = document.querySelector('.create')
 let btn_reinit = document.querySelector('.reinit')
 let li = document.createElement('li')
@@ -16,7 +17,12 @@ btn_creer.addEventListener('click', function(){
 })
 
 
-// btn_reinit.addEventListener('click', function(){
-//     alert(prenom.value )
-// })
-// console.log(prenom.value);
+btn_reinit.addEventListener('click', function(){
+    prenom.value="";
+    nom.value="";
+    tel.value="";
+    groupe.value="";
+    bio.value="";
+    file.value=""
+})
+
