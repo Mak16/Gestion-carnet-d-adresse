@@ -3,7 +3,6 @@
 * {
   margin: 0;
   padding: 0;
- 
 }
 
 .carnet {
@@ -33,20 +32,33 @@
 }
 
 .main {
+  margin: auto;
   display: flex;
   flex-direction: row;
-  height: 1007px;
+  width: 90%;
   top: 85px;
   left: 86px;
   gap: 15px;
-  padding-left: 100px;
-  padding-right: 100px;
+}
+@media all and (max-width: 850px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+    gap: 1em;
+  }
 }
 
 .form {
-  height: 1007px;
   width: 40%;
   border: 1px solid rgb(196, 196, 196);
+  padding-bottom: 2em;
+}
+@media all and (max-width: 850px) {
+  .form {
+    width: 100%;
+  }
 }
 .form .form-title {
   display: flex;
@@ -77,6 +89,7 @@
   width: 100%;
   height: 115px;
   border: 1px solid rgb(196, 196, 196);
+  resize: none;
 }
 .form .form-contact .drag-drop {
   display: flex;
@@ -92,6 +105,9 @@
   width: 100%;
   border: 1px dashed rgb(196, 196, 196);
 }
+.form .form-contact #file {
+  display: none;
+}
 .form .form-contact label {
   font-weight: 500;
   font-size: 16px;
@@ -103,10 +119,18 @@
   flex-direction: row;
   gap: 36px;
   height: 44px;
-  width: 302px;
+  width: 18em;
+}
+@media all and (max-width: 500px) {
+  .form .form-contact .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
 }
 .form .form-contact .btn .create {
-  width: 135px;
+  width: 8em;
   height: 44px;
   background-color: rgb(8, 128, 214);
   border: 1px solid rgb(8, 128, 214);
@@ -114,8 +138,23 @@
   font-weight: 500;
   color: white;
 }
+@media all and (max-width: 500px) {
+  .form .form-contact .btn .create {
+    margin-left: 4.3em;
+  }
+}
+@media all and (max-width: 400px) {
+  .form .form-contact .btn .create {
+    margin-left: 1em;
+  }
+}
+@media all and (max-width: 300px) {
+  .form .form-contact .btn .create {
+    margin-left: -7em;
+  }
+}
 .form .form-contact .btn .reinit {
-  width: 131px;
+  width: 8em;
   height: 44px;
   background-color: rgb(255, 56, 56);
   border: 1px solid rgb(255, 56, 56);
@@ -123,10 +162,29 @@
   font-weight: 500;
   color: white;
 }
+@media all and (max-width: 500px) {
+  .form .form-contact .btn .reinit {
+    margin-left: 4.3em;
+  }
+}
+@media all and (max-width: 400px) {
+  .form .form-contact .btn .reinit {
+    margin-left: 1em;
+  }
+}
+@media all and (max-width: 300px) {
+  .form .form-contact .btn .reinit {
+    margin-left: -7em;
+  }
+}
 
 .contact-list {
-  height: 660px;
   width: 60%;
+}
+@media all and (max-width: 850px) {
+  .contact-list {
+    width: 100%;
+  }
 }
 .contact-list span {
   display: flex;
