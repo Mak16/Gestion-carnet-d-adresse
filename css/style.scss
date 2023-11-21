@@ -6,6 +6,11 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    @media all and (max-width: 850px){
+        display: flex;
+        flex-direction: column;
+        row-gap: 1em;
+    }
 }
 
 .carnet{
