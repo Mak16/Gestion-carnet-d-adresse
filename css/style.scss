@@ -5,12 +5,19 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .carnet{
     display: flex;
     flex-direction: column;
     gap:15px;
+    width: 100%;
+    @media all and (max-width: 850px){
+        display: flex;
+        flex-direction: column;
+        row-gap: 1em;
+    }
     .title{
 
         background-color: rgba(8, 128, 214, 1);
@@ -25,35 +32,39 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
             justify-content: center;
             height:70px;
             padding-left: 30px ;
-            // padding: 20px, 30px, 20px, 30px;
             gap:24px;
             font-size:20px ;
             font-weight: 700;
-            // line-height: 30px;
             font-family: 'popins';
             color: rgba(255, 255, 255, 1);
         }
     }
     
 }
-
 .main{
-
+    margin: auto;
     display: flex;
     flex-direction: row;
-    height:1007px ;
+    width: 90%;
     top:85px;
     left: 86px;
     gap:15px;
-    padding-left: 100px;
-    padding-right: 100px;
+    @media all and (max-width: 850px){
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 90%;
+        gap: 1em;
+    }
 }
 
 .form{
-    height: 1007px;
     width: 40%;
     border: $borderStyle;
-
+    padding-bottom: 2em;
+    @media all and (max-width: 850px){
+        width: 100%;
+    }
     .form-title{
         display:flex;
         flex-direction: row;
@@ -83,6 +94,7 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
             width:100% ;
             height: 115px;
             border: $borderStyle;
+            resize: none;
         }
         .drag-drop{
             display: flex;
@@ -98,6 +110,9 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
             width:100% ;
             border: 1px dashed rgba(196, 196, 196, 1);
         }
+        #file{
+            display: none;
+        }
         label{
             font-weight:500;
             font-size: 16px;
@@ -109,33 +124,67 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
             flex-direction: row;
             gap:36px;
             height: 44px;
-            width: 302px;
+            width: 18em;
+            @media all and (max-width:500px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5em;
+                
+            }
             .create{
-                width: 135px;
+                width: 8em;
                 height: 44px;
                 background-color: rgba(8, 128, 214, 1);
                 border:1px solid rgba(8, 128, 214, 1);
                 font-size: 16px;
                 font-weight: 500;
                 color:white;
+                @media all and (max-width:500px) {
+                    margin-left: 4.3em;
+                    
+                }
+                @media all and (max-width:400px) {
+                    margin-left: 1em;
+                    
+                }
+                @media all and (max-width:300px) {
+                    margin-left: -7em;
+                    
+                }
+
             }
             
             .reinit{
-                width: 131px;
+                width: 8em;
                 height: 44px;
                 background-color: rgba(255, 56, 56, 1);
                 border: 1px solid rgba(255, 56, 56, 1) ;
                 font-size: 16px;
                 font-weight: 500;
                 color:white;
+                @media all and (max-width:500px) {
+                    margin-left: 4.3em;
+                    
+                }
+                @media all and (max-width:400px) {
+                    margin-left: 1em;
+                    
+                }
+                @media all and (max-width:300px) {
+                    margin-left: -7em;
+                    
+                }
             }
         }
     }
 }
 
 .contact-list{
-    height: 660px;
     width: 60%;
+    @media all and (max-width: 850px){
+        width: 100%;
+    }
     span{
         display: flex;
         flex-direction: row;
