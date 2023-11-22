@@ -16,13 +16,14 @@ btn_creer.addEventListener('click', function(){
     ul.appendChild(li)
 })
 
-
-btn_reinit.addEventListener('click', function(){
-    prenom.value="";
-    nom.value="";
-    tel.value="";
-    groupe.value="";
-    bio.value="";
-    file.value=""
+btn_reinit.addEventListener('click', function reinit(e){
+    e.preventDefault();
+    if (confirm("voulez-vous réinitialiser tous les champs?") == true) {
+        prenom.value="";
+        nom.value="";
+        tel.value="";
+        groupe.value="";
+        bio.value="";
+        file.value=""
+      } 
 })
-
