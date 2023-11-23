@@ -5,6 +5,7 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
 *{
     margin: 0;
     padding: 0;
+    font-family: 'popins';
     box-sizing: border-box;
     @media all and (max-width: 850px){
         display: flex;
@@ -40,7 +41,6 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
             gap:24px;
             font-size:20px ;
             font-weight: 700;
-            font-family: 'popins';
             color: rgba(255, 255, 255, 1);
         }
     }
@@ -110,7 +110,6 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
             color:rgba(85, 85, 85, 1);
             font-size: 16px;
             font-weight: 500;
-            font-family: 'poppins';
             height:138px ;
             width:100% ;
             border: 1px dashed rgba(196, 196, 196, 1);
@@ -121,7 +120,6 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
         label{
             font-weight:500;
             font-size: 16px;
-            font-family: 'poppins';
             color:rgba(8, 128, 214, 1);
         }
         .btn{
@@ -201,5 +199,85 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
         width:100%;
         height:45px ;
         background-color: rgba(8, 128, 214, 1);
+    }
+}
+// début design contact-list
+.ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 985px;
+    height: 245px;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid red;
+    .photo{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bolder;
+        width: 210px;
+        background-color:white;
+        border-radius: 50%;
+        border: 1px solid rgb(214, 177, 177);
+    }
+    .info-contact{
+        display: flex;
+        flex-direction: column;
+        width: 775px;
+        background-color:white;
+        border: 1px solid rgb(234, 191, 191);
+        .name-contact{
+            display: flex;
+            flex-direction: row;
+            background-color: aqua;
+            height: 20%;
+            border: 1px solid ;
+            .personal-info{
+                display: flex;
+                flex-direction:row;
+                justify-content: start;
+                align-items: center;
+                gap: 10px;
+                width: 90%;
+                border: 1px solid ;
+                background-color:white;
+            }
+            .edit-delete{
+                display: flex;
+                flex-direction:row;
+                justify-content:space-around;  
+                align-items: center; 
+                background-color: white;
+                width: 10%;
+                border: 1px solid ;
+                .btn_edit{
+                    border: solid white ;
+                   }
+                   
+                   .btn_delete{
+                       border: solid white;
+                   }
+               }
+        }
+        .phone-num{
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            background-color: white;
+            height: 20%;
+            border: 1px solid ;
+        }
+        
+        .biography{
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            background-color: white;
+            height: 60%;
+            border: 1px solid ;
+        }
     }
 }
