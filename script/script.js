@@ -13,6 +13,11 @@ let formulaire_input=[prenom.value,nom.value,tel.value,groupe.value,bio.value]
 btn_creer.addEventListener('click', function(){
     let li = document.createElement('li')
     li.innerHTML = prenom.value
+    li.innerHTML = nom.value
+    li.innerHTML = tel.value
+    li.innerHTML = groupe.value
+    li.innerHTML = bio.value
+    
     ul.appendChild(li)
 })
 
