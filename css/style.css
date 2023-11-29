@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "popins";
+  font-family: "poppins";
   box-sizing: border-box;
 }
 @media all and (max-width: 850px) {
@@ -12,6 +12,14 @@
     flex-direction: column;
     row-gap: 1em;
   }
+}
+
+head {
+  display: none;
+}
+
+script {
+  display: none;
 }
 
 .carnet {
@@ -106,7 +114,7 @@
   border: 1px solid rgb(196, 196, 196);
   resize: none;
 }
-.form .form-contact .drag-drop {
+.form .form-contact .upload {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -119,8 +127,14 @@
   width: 100%;
   border: 1px dashed rgb(196, 196, 196);
 }
-.form .form-contact #file {
-  display: none;
+.form .form-contact .upload #file {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.form .form-contact .upload label {
+  color: #555555;
+  width: 100%;
 }
 .form .form-contact label {
   font-weight: 500;
@@ -212,80 +226,86 @@
   background-color: rgb(8, 128, 214);
 }
 
-.ul {
+.contact-list-items {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-  width: 985px;
+  gap: 50px;
+  width: 100%;
   height: 245px;
   padding: 20px;
   background-color: white;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #DDDDDD;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
 }
-.ul .photo {
+.contact-list-items .photo {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-size: 20px;
   font-weight: bolder;
-  width: 210px;
+  width: 30%;
   background-color: white;
   border-radius: 50%;
   border: 1px solid rgb(214, 177, 177);
 }
-.ul .info-contact {
+.contact-list-items .info-contact {
   display: flex;
   flex-direction: column;
-  width: 775px;
+  width: 70%;
   background-color: white;
-  border: 1px solid rgb(234, 191, 191);
 }
-.ul .info-contact .name-contact {
+.contact-list-items .info-contact .name-contact {
   display: flex;
   flex-direction: row;
   background-color: aqua;
   height: 20%;
   border: 1px solid;
 }
-.ul .info-contact .name-contact .personal-info {
+.contact-list-items .info-contact .name-contact .personal-info {
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
   gap: 10px;
-  width: 90%;
-  border: 1px solid;
+  width: 85%;
   background-color: white;
 }
-.ul .info-contact .name-contact .edit-delete {
+.contact-list-items .info-contact .name-contact .edit-delete {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   background-color: white;
-  width: 10%;
+  width: 15%;
   border: 1px solid;
 }
-.ul .info-contact .name-contact .edit-delete .btn_edit {
+.contact-list-items .info-contact .name-contact .edit-delete .btn_edit {
   border: solid white;
 }
-.ul .info-contact .name-contact .edit-delete .btn_delete {
+.contact-list-items .info-contact .name-contact .edit-delete .btn_delete {
   border: solid white;
 }
-.ul .info-contact .phone-num {
+.contact-list-items .info-contact .phone-num {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
   background-color: white;
   height: 20%;
   border: 1px solid;
 }
-.ul .info-contact .biography {
+.contact-list-items .info-contact .biography {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   background-color: white;
   height: 60%;
   border: 1px solid;
+  font-size: 1rem;
+  flex-wrap: wrap;
+}
+@media all and (max-width: 1200px) {
+  .contact-list-items .info-contact .biography {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=style.css.map */
