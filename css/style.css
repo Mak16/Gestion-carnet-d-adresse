@@ -14,6 +14,14 @@
   }
 }
 
+head {
+  display: none;
+}
+
+script {
+  display: none;
+}
+
 .carnet {
   display: flex;
   flex-direction: column;
