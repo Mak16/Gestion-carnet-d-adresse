@@ -36,6 +36,7 @@ btn_creer.addEventListener("click", function (e) {
     file.value
   );
   listContact.push(contact);
+  console.log(listContact);
   showContact();
   // console.log(listContact);
 });
@@ -50,3 +51,69 @@ function IdContact(prenom, nom, telephone, groupe, email, bio, photo) {
   this.photo = photo;
 }
 
+function showContact() {
+  listContenair.innerHTML = "";
+  let span=document.createElement('span')
+  listContenair.appendChild(span)
+  span.innerHTML='Liste des contacts'
+  for (let i = 0; i < listContact.length; i++) {
+    const element = listContact[i];
+    // console.log(element.prenom);
+    let contactListItems = document.createElement("div");
+    contactListItems.setAttribute("class", "contact-list-items");
+    let photo = document.createElement("div");
+    photo.setAttribute("class", "photo");
+    photo.innerHTML = "photo";
+    contactListItems.appendChild(photo);
+    listContenair.appendChild(contactListItems);
+    let infoContact = document.createElement("div");
+    infoContact.setAttribute("class", "info-contact");
+    contactListItems.appendChild(infoContact);
+    let nameContact = document.createElement("div");
+    nameContact.setAttribute("class", "name-contact");
+    infoContact.appendChild(nameContact);
+    let personalInfo = document.createElement("div");
+    personalInfo.setAttribute("class", "personal-info");
+    nameContact.appendChild(personalInfo);
+    let pPrenom = document.createElement("p");
+    personalInfo.appendChild(pPrenom);
+    pPrenom.innerHTML = element.prenom;
+    let pNom = document.createElement("p");
+    personalInfo.appendChild(pNom);
+    pNom.innerHTML = element.nom;
+    let pGroupe = document.createElement("p");
+    personalInfo.appendChild(pGroupe);
+    pGroupe.innerHTML = `- ${element.groupe}`;
+
+    //creation des boutons de modification et suppression
+
+    let editDelete=document.createElement('div')
+    editDelete.setAttribute('class','edit-delete')
+    nameContact.appendChild(editDelete)
+    let edit=document.createElement('button')
+    edit.setAttribute('class','btn_edit')
+    let delet=document.createElement('button')
+    delet.setAttribute('class','btn_delete')
+    let editIcon=document.createElement('img')
+    editIcon.setAttribute('src','images/Vector(1).svg')
+    let deletIcon=document.createElement('img')
+    deletIcon.setAttribute('src','images/Vector.svg')
+    edit.appendChild(editIcon)
+    delet.appendChild(deletIcon)
+    editDelete.appendChild(edit)
+    editDelete.appendChild(delet)
+    //ajout de numero, email et bio
+    let phoneEmail=document.createElement('div')
+    phoneEmail.setAttribute('class','phone-num')
+    let biography=document.createElement('div')
+    biography.setAttribute('class','biography')
+    infoContact.appendChild(phoneEmail)
+    infoContact.appendChild(biography)
+    let pPhone=document.createElement('p')
+    let pBio=document.createElement('p')
+    pPhone.innerHTML=`${element.telephone} -  ${element.email}`
+    pBio.innerHTML=element.bio
+    phoneEmail.appendChild(pPhone)
+    biography.appendChild(pBio)
+  }
+}

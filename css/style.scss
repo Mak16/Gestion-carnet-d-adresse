@@ -7,6 +7,7 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
     padding: 0;
     font-family: 'poppins';
     box-sizing: border-box;
+    color: #555555;
     @media all and (max-width: 850px){
         display: flex;
         flex-direction: column;
@@ -246,9 +247,7 @@ script{
         .name-contact{
             display: flex;
             flex-direction: row;
-            background-color: aqua;
             height: 20%;
-            border: 1px solid ;
             .personal-info{
                 display: flex;
                 flex-direction:row;
@@ -256,22 +255,17 @@ script{
                 align-items: center;
                 gap: 10px;
                 width: 85%;
-                background-color:white;
             }
             .edit-delete{
                 display: flex;
                 flex-direction:row;
                 justify-content:space-around;  
                 align-items: center; 
-                background-color: white;
                 width: 15%;
-                border: 1px solid ;
                 .btn_edit{
-                    border: solid white ;
                    }
                    
                    .btn_delete{
-                       border: solid white;
                    }
                }
         }
@@ -279,18 +273,14 @@ script{
             display: flex;
             flex-direction:row;
             justify-content: start;
-            align-items: center;
-            background-color: white;
+            align-items: center;;
             height: 20%;
-            border: 1px solid ;
         }
         
         .biography{
             display: flex;
             justify-content: start;
-            background-color: white;
             height: 60%;
-            border: 1px solid ;
             font-size: 1rem;
             flex-wrap: wrap;
             @media all and (max-width: 1200px){
