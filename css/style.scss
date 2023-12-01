@@ -5,8 +5,9 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
 *{
     margin: 0;
     padding: 0;
-    font-family: 'popins';
+    font-family: 'poppins';
     box-sizing: border-box;
+    color: #555555;
     @media all and (max-width: 850px){
         display: flex;
         flex-direction: column;
@@ -14,11 +15,10 @@ $borderStyle:1px solid rgba(196, 196, 196, 1);
     }
 }
 head{
-    display:none;
+    display: none;
 }
-
 script{
-    display:none ;
+    display: none;
 }
 
 .carnet{
@@ -108,7 +108,7 @@ script{
             border: $borderStyle;
             resize: none;
         }
-        .drag-drop{
+        .upload{
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -122,7 +122,7 @@ script{
             border: 1px dashed rgba(196, 196, 196, 1);
         }
         #file{
-            display:none;
+            display: none;
         }
         label{
             font-weight:500;
@@ -209,15 +209,17 @@ script{
     }
 }
 // début design contact-list
-.ul{
+.contact-list-items{
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-    width: 985px;
+    // flex-direction: row;
+    gap: 50px;
+    width: 100%;
     height: 245px;
     padding: 20px;
     background-color: white;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
     .photo{
         display: flex;
         flex-direction: row;
@@ -225,7 +227,7 @@ script{
         align-items: center;
         font-size: 20px;
         font-weight: bolder;
-        width: 210px;
+        width: 30%;
         background-color:white;
         border-radius: 50%;
         border: 1px solid rgb(214, 177, 177);
@@ -233,58 +235,51 @@ script{
     .info-contact{
         display: flex;
         flex-direction: column;
-        width: 775px;
+        width: 70%;
         background-color:white;
-        border: 1px solid rgb(234, 191, 191);
         .name-contact{
             display: flex;
             flex-direction: row;
-            background-color: aqua;
             height: 20%;
-            border: 1px solid ;
             .personal-info{
                 display: flex;
                 flex-direction:row;
                 justify-content: start;
                 align-items: center;
                 gap: 10px;
-                width: 90%;
-                border: 1px solid ;
-                background-color:white;
+                width: 85%;
             }
             .edit-delete{
                 display: flex;
                 flex-direction:row;
                 justify-content:space-around;  
                 align-items: center; 
-                background-color: white;
-                width: 10%;
-                border: 1px solid ;
+                width: 15%;
                 .btn_edit{
-                    border: solid white ;
                    }
                    
                    .btn_delete{
-                       border: solid white;
                    }
                }
         }
         .phone-num{
             display: flex;
-            flex-direction:column;
-            justify-content: center;
-            background-color: white;
+            flex-direction:row;
+            justify-content: start;
+            align-items: center;;
             height: 20%;
-            border: 1px solid ;
         }
         
         .biography{
             display: flex;
-            flex-direction:column;
-            justify-content: center;
-            background-color: white;
+            justify-content: start;
             height: 60%;
-            border: 1px solid ;
+            font-size: 1rem;
+            flex-wrap: wrap;
+            @media all and (max-width: 1200px){
+                font-size: 1rem;
+
+            }
         }
     }
 }

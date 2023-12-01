@@ -16,28 +16,49 @@
             <div class="form">
                <span class="form-title">Formulaire de contact</span>
                <form class="form-contact">
-                <br><label for="prenom">Prénom</label><input id="prenom" type="text" value=""><span id ="MySpan_prenom"></span>
-                <label for="nom">Nom</label><input id="nom" type="text" value=""><span id ="MySpan_nom"></span>
-                <label for="tel">Télépone</label><input id="tel" type="tel" value=""><span id ="MySpan_tel"></span>
-                <label for="groupe">Groupe</label><input  id="groupe" type="text" value="">
-                <label for="email">Email</label><input  id="email" type="email" value=""><span id ="MySpan_email"></span>
-                <label for="bio">Bio</label><textarea name="bio" id="bio" cols="30" rows="10" value=""></textarea>
-               <label class="drag-drop" for="file">Déposer la photo <br> ici</label>
-               <input type="file" id="file">
-                <div class="btn">
-                    <button class="create">Créer</button>
-                    <button class="reinit">Réinit</button>
-                </div>
+                    <div>
+                        <label for="prenom">Prénom</label>
+                        <input id="prenom" type="text" name="prenom">
+                    </div>
+                    <div>
+                        <label for="nom">Nom</label>
+                        <input id="nom" type="text" name="nom">
+                    </div>
+                    <div>
+                        <label for="tel">Télépone</label>
+                        <input id="tel" type="text" name="tel">
+                    </div>
+                    <div>
+                        <label for="groupe">Groupe</label>
+                        <input  id="groupe" type="text" name="groupe">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input  id="email" type="text" name="email">
+                    </div>
+                    <div>
+                        <label for="bio">Bio</label>
+                        <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+
+                    </div>
+                    <div class="upload">
+                        <label for="file">Déposez la photo <br> ici<input type="file" id="file" name="file"></label>
+                    </div>
+                    <div class="btn">
+                        <button type="submit" class="create">Créer</button>
+                        <button class="reinit">Réinit</button>
+                    </div>
                </form>
             </div>
             <div class="contact-list">
                 <span>Liste des contacts </span>
-                <ul class="ul">
-                    <div class="photo">Photo</div>
+                <div class="contact-list-items">
+                    <div>
+                        <!-- <div class="photo">Photo</div>
                     <div class="info-contact">
                         <div class="name-contact">
                             <div class="personal-info">
-                                <p>Flavien</p>
+                              <p>Flavien</p>
                                 <p>umba</p>
                                 <p>-groupe1</p>
                             </div>
@@ -46,14 +67,14 @@
                                 <button class="btn_delete"><img src="images/Vector.svg" alt="Vector2"></button>
                             </div>
                         </div>
-                        <div class="phone-num">+243998181080</div>
-                        <div class="biography">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum laudantium aliquam fugit placeat aspernatur omnis, ducimus earum necessitatibus debitis quisquam voluptatem delectus deserunt, possimus nam. Optio alias voluptatum debitis explicabo id veniam enim saepe voluptatem mollitia voluptas ducimus accusamus sint qui, ex placeat iure dolores asperiores accusantium ullam laboriosam modi!</div>
+                        <div class="phone-num"><p>+243998181080 - email</p></div>
+                        <div class="biography"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore molestiae atque id quibusdam, non delectus dolores nostrum sequi possimus pariatur et eaque perferendis labore magni! Unde eum delectus hic dicta.</p></div>
+                    </div> -->
                     </div>
-                </ul>
+                </div>
             </div>
         </div> 
     </div>
-
 
     <script src="script/script.js"></script>
 </body>
