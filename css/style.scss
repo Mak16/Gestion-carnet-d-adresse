@@ -109,6 +109,7 @@ script{
             resize: none;
         }
         .upload{
+            object-fit:cover;
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -120,6 +121,9 @@ script{
             height:138px ;
             width:100% ;
             border: 1px dashed rgba(196, 196, 196, 1);
+        }
+        img{
+            object-fit:cover;
         }
         #file{
             display: none;

@@ -116,6 +116,8 @@ script {
   resize: none;
 }
 .form .form-contact .upload {
+  -o-object-fit: cover;
+     object-fit: cover;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -128,14 +130,12 @@ script {
   width: 100%;
   border: 1px dashed rgb(196, 196, 196);
 }
-.form .form-contact .upload #file {
-  opacity: 0;
-  width: 100%;
-  height: 100%;
+.form .form-contact img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.form .form-contact .upload label {
-  color: #555555;
-  width: 100%;
+.form .form-contact #file {
+  display: none;
 }
 .form .form-contact label {
   font-weight: 500;
