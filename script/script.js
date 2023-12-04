@@ -13,32 +13,14 @@ let listContact = [];
 btn_reinit.addEventListener("click", function reinit(e) {
   e.preventDefault();
   if (confirm("voulez-vous réinitialiser tous les champs?") == true) {
-    prenom.value = "";
-    nom.value = "";
-    tel.value = "";
-    groupe.value = "";
-    bio.value = "";
-    file.value = "";
-    email.value = "";
+    clearField()
   }
 });
-
-// console.log(form);
 btn_creer.addEventListener("click", function (e) {
   e.preventDefault();
-  let contact = new IdContact(
-    prenom.value,
-    nom.value,
-    tel.value,
-    groupe.value,
-    email.value,
-    bio.value,
-    file.value
-  );
-  listContact.push(contact);
-  console.log(listContact);
+  addContact()
   showContact();
-  // console.log(listContact);
+  clearField()
 });
 
 function IdContact(prenom, nom, telephone, groupe, email, bio, photo) {
@@ -58,7 +40,7 @@ function showContact() {
   span.innerHTML='Liste des contacts'
   for (let i = 0; i < listContact.length; i++) {
     const element = listContact[i];
-    // console.log(element.prenom);
+    let index=listContact.indexOf(element)
     let contactListItems = document.createElement("div");
     contactListItems.setAttribute("class", "contact-list-items");
     let photo = document.createElement("div");
@@ -96,8 +78,10 @@ function showContact() {
     delet.setAttribute('class','btn_delete')
     let editIcon=document.createElement('img')
     editIcon.setAttribute('src','images/Vector(1).svg')
+    // editIcon.setAttribute('onclick','index')
     let deletIcon=document.createElement('img')
     deletIcon.setAttribute('src','images/Vector.svg')
+    deletIcon.setAttribute('onclick',`deletContact(${index})`)
     edit.appendChild(editIcon)
     delet.appendChild(deletIcon)
     editDelete.appendChild(edit)
@@ -116,4 +100,34 @@ function showContact() {
     phoneEmail.appendChild(pPhone)
     biography.appendChild(pBio)
   }
+}
+
+//supprimer un contact
+function deletContact (i){
+  listContact.splice(i,1)
+  showContact()
+}
+
+//vider les champs du formulaire
+function clearField() {
+  prenom.value = "";
+    nom.value = "";
+    tel.value = "";
+    groupe.value = "";
+    bio.value = "";
+    file.value = "";
+    email.value = "";
+}
+
+function addContact(){
+  let contact = new IdContact(
+    prenom.value,
+    nom.value,
+    tel.value,
+    groupe.value,
+    email.value,
+    bio.value,
+    file.value
+  );
+  listContact.push(contact);
 }
