@@ -3,22 +3,76 @@ let nom = document.querySelector("#nom");
 let tel = document.querySelector("#tel");
 let groupe = document.querySelector("#groupe");
 let bio = document.querySelector("#bio");
-let file = document.querySelector("#file");
+// let file = document.querySelector("#file");
 let email = document.querySelector("#email");
 let listContenair = document.querySelector(".contact-list");
 let btn_creer = document.querySelector(".create");
 let btn_reinit = document.querySelector(".reinit");
 let listContact = [];
+let picture
+// input type file traitement
 
-btn_reinit.addEventListener("click", function reinit(e) {
-  e.preventDefault();
-  if (confirm("voulez-vous réinitialiser tous les champs?") == true) {
-    clearField()
+let div = document.querySelector(".upload")
+let label = document.querySelector('#label_affichage')
+let file = document.querySelector("#file");
+let img = document.createElement('img')
+img.style.width="100%"
+img.style.height="100%"
+
+file.onchange= function(event){
+  let fichier = event.target.files[0]
+  let reader = new FileReader()
+  reader.onload = function(e){
+    img.src= e.target.result
+    picture=e.target.result
+    // label.textContent= img
+   div.appendChild(img)
+   label.innerHTML=""
+   console.log(picture)
   }
-});
+  reader.readAsDataURL(fichier)
+  
+}
+
+
+
+
+btn_reinit.addEventListener('click', function reinit(e){
+    e.preventDefault();
+    if (confirm("voulez-vous réinitialiser tous les champs?") == true){
+        prenom.value="";
+        nom.value="";
+        tel.value="";
+        groupe.value="";
+        email.value="";
+        bio.value="";
+        file.value="";
+        span_tel.textContent="";
+        span_email.textContent="";
+        span_prenom.textContent="";
+        span_nom.textContent="";
+        tel.style.border = "";
+        email.style.border = "";
+        prenom.style.border = "";
+        nom.style.border = "";
+      } 
+})
+
+ // button créer
+
 btn_creer.addEventListener("click", function (e) {
   e.preventDefault();
-  addContact()
+  let contact = new IdContact(
+    prenom.value,
+    nom.value,
+    tel.value,
+    groupe.value,
+    email.value,
+    bio.value,
+    picture
+  );
+  listContact.push(contact);
+  console.log(listContact);
   showContact();
   clearField()
 });
@@ -45,8 +99,12 @@ function showContact() {
     contactListItems.setAttribute("class", "contact-list-items");
     let photo = document.createElement("div");
     photo.setAttribute("class", "photo");
-    photo.innerHTML = "photo";
     contactListItems.appendChild(photo);
+    let image=document.createElement('img')
+    image.setAttribute('src',`${picture}`)
+    image.style.width="100%"
+    image.style.borderRadius="50%"    
+    photo.appendChild(image)
     listContenair.appendChild(contactListItems);
     let infoContact = document.createElement("div");
     infoContact.setAttribute("class", "info-contact");
@@ -65,7 +123,7 @@ function showContact() {
     pNom.innerHTML = element.nom;
     let pGroupe = document.createElement("p");
     personalInfo.appendChild(pGroupe);
-    pGroupe.innerHTML = `- ${element.groupe}`;
+    pGroupe.innerHTML = ` ${element.groupe}`;
 
     //creation des boutons de modification et suppression
 
@@ -95,7 +153,7 @@ function showContact() {
     infoContact.appendChild(biography)
     let pPhone=document.createElement('p')
     let pBio=document.createElement('p')
-    pPhone.innerHTML=`${element.telephone} -  ${element.email}`
+    pPhone.innerHTML=`${element.telephone}   ${element.email}`
     pBio.innerHTML=element.bio
     phoneEmail.appendChild(pPhone)
     biography.appendChild(pBio)
