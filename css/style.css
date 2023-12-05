@@ -131,8 +131,8 @@ script {
   border: 1px dashed rgb(196, 196, 196);
 }
 .form .form-contact img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .form .form-contact #file {
   display: none;
@@ -247,8 +247,6 @@ script {
   font-weight: bolder;
   width: 30%;
   background-color: white;
-  border-radius: 50%;
-  border: 1px solid rgb(214, 177, 177);
 }
 .contact-list-items .info-contact {
   display: flex;

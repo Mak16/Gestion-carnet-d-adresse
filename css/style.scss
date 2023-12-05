@@ -123,7 +123,8 @@ script{
             border: 1px dashed rgba(196, 196, 196, 1);
         }
         img{
-            object-fit:cover;
+            object-fit:contain;
+          
         }
         #file{
             display: none;
@@ -233,8 +234,8 @@ script{
         font-weight: bolder;
         width: 30%;
         background-color:white;
-        border-radius: 50%;
-        border: 1px solid rgb(214, 177, 177);
+        // border-radius: 50%;
+        // border: 1px solid rgb(214, 177, 177);
     }
     .info-contact{
         display: flex;
@@ -259,6 +260,7 @@ script{
                 justify-content:space-around;  
                 align-items: center; 
                 width: 15%;
+        
                 .btn_edit{
                    }
                    

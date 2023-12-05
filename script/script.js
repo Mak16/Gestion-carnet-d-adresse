@@ -3,13 +3,13 @@ let nom = document.querySelector("#nom");
 let tel = document.querySelector("#tel");
 let groupe = document.querySelector("#groupe");
 let bio = document.querySelector("#bio");
-// let file = document.querySelector("#file");
 let email = document.querySelector("#email");
 let listContenair = document.querySelector(".contact-list");
 let btn_creer = document.querySelector(".create");
 let btn_reinit = document.querySelector(".reinit");
 let listContact = [];
 let picture
+
 // input type file traitement
 
 let div = document.querySelector(".upload")
@@ -23,12 +23,11 @@ file.onchange= function(event){
   let fichier = event.target.files[0]
   let reader = new FileReader()
   reader.onload = function(e){
-    img.src= e.target.result
-    picture=e.target.result
-    // label.textContent= img
-   div.appendChild(img)
-   label.innerHTML=""
-   console.log(picture)
+  img.src= e.target.result
+  picture=e.target.result
+  div.appendChild(img)
+  label.innerHTML=""
+  console.log(picture)
   }
   reader.readAsDataURL(fichier)
   
@@ -102,8 +101,10 @@ function showContact() {
     contactListItems.appendChild(photo);
     let image=document.createElement('img')
     image.setAttribute('src',`${picture}`)
-    image.style.width="100%"
-    image.style.borderRadius="50%"    
+    image.style.width="200px"
+    image.style.height="200px"
+    image.style.objectFit="cover"
+    image.style.borderRadius="50%"   
     photo.appendChild(image)
     listContenair.appendChild(contactListItems);
     let infoContact = document.createElement("div");
@@ -142,7 +143,9 @@ function showContact() {
     delet.appendChild(deletIcon)
     editDelete.appendChild(edit)
     editDelete.appendChild(delet)
+
     //ajout de numero, email et bio
+
     let phoneEmail=document.createElement('div')
     phoneEmail.setAttribute('class','phone-num')
     let biography=document.createElement('div')
