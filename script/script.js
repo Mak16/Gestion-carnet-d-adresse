@@ -99,6 +99,43 @@ function showContact() {
     pBio.innerHTML=element.bio
     phoneEmail.appendChild(pPhone)
     biography.appendChild(pBio)
+
+    edit.addEventListener('click',function(e){
+      btn_creer.style.display='none'
+      btn_reinit.style.display='none'
+      prenom.value = element.prenom;
+      nom.value = element.nom;
+      tel.value = element.telephone;
+      groupe.value = element.groupe;
+      bio.value = element.bio;
+      file.value = element.photo;
+      email.value = element.email;
+      let btn_modifier=document.createElement('button')
+      btn_modifier.innerHTML='Mofifier'
+      btn_modifier.setAttribute('class','btn_modifier')
+      let btn_annuler=document.createElement('button')
+      btn_annuler.innerHTML='Annuler'
+      btn_annuler.setAttribute('class','btn_annuler')
+      let btn=document.querySelector('.btn')
+      btn.appendChild(btn_modifier)
+      btn.appendChild(btn_annuler)
+      btn_modifier.addEventListener('click',function(e){
+        e.preventDefault()
+        editContact(index)
+        showContact()
+        btn_modifier.style.display='none'
+        btn_annuler.style.display='none'
+        btn_creer.style.display='block'
+        btn_reinit.style.display='block'
+        clearField()
+
+      })
+      btn_annuler.addEventListener('click',function(e){
+        e.preventDefault()
+        clearField()
+
+      })
+    })
   }
 }
 
@@ -130,4 +167,18 @@ function addContact(){
     file.value
   );
   listContact.push(contact);
+}
+
+//modifier un contact
+function editContact(i){
+  let contactModifie = new IdContact(
+    prenom.value,
+    nom.value,
+    tel.value,
+    groupe.value,
+    email.value,
+    bio.value,
+    file.value
+  );
+  listContact[i]=contactModifie
 }
