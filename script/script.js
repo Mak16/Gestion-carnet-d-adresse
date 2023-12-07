@@ -10,6 +10,190 @@ let btn_reinit = document.querySelector(".reinit");
 let listContact = [];
 let picture
 
+// validation prenom
+
+function validation_prenom(){
+      
+  let MySpan_prenom = document.querySelector("#MySpan_prenom")
+  let span_prenom = document.createElement("span_prenom");
+  let regex_prenom =/^[a-zA-Z]{3,50}$/
+  let result_prenom;
+  prenom.addEventListener('blur',function(){
+      MySpan_prenom.appendChild(span_prenom);
+      result_prenom=prenom.value.trim();
+      if(regex_prenom.test(result_prenom)){
+          prenom.style.border = "2px solid green";
+          // span_prenom.textContent="Prénom valide"
+          // span_prenom.style.color="green"
+          // span_prenom.style.fontSize="10px"
+          // span_prenom.style.fontStyle="italic"
+     
+      }
+     
+      else{
+          prenom.style.border = "2px solid red";
+          // span_prenom.style.color="red"
+          // span_prenom.textContent="prénom invalide"
+          // span_prenom.style.color="red"
+          // span_prenom.style.fontSize="10px"
+          // span_prenom.style.fontStyle="italic"
+     
+     }
+  })
+  
+} validation_prenom()
+
+//validation Nom 
+
+function validation_nom(){
+     
+  let MySpan_nom = document.querySelector("#MySpan_nom")
+  let span_nom = document.createElement("span_nom");
+  let regex_nom =/^[a-zA-Z]{3,50}$/
+  let result_nom;
+  nom.addEventListener('blur',function(){
+      MySpan_nom.appendChild(span_nom);
+      result_nom=nom.value.trim();
+      if(regex_nom.test(result_nom)){
+          nom.style.border = "2px solid green";
+          // span_nom.textContent="Nom valide"
+          // span_nom.style.color="green"
+          // span_nom.style.fontSize="10px"
+          // span_nom.style.fontStyle="italic"
+      }
+     
+      else{
+          nom.style.border = "2px red solid";
+          // span_nom.style.color="red"
+          // span_nom.textContent="Nom invalide"
+          // span_nom.style.color="red"
+          // span_nom.style.fontSize="10px"
+          // span_nom.style.fontStyle="italic"
+     }
+  })  
+
+} validation_nom()
+
+//validation email
+
+function validation_email(){
+      
+  let MySpan_email = document.querySelector("#MySpan_email")
+  let span_email = document.createElement("span");
+  let regex_email =/^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/
+  let result_email;
+  email.addEventListener('blur',function(){
+      MySpan_email.appendChild(span_email);
+      result_email=email.value.trim();
+      if(regex_email.test(result_email)){
+          email.style.border = "2px solid green";
+          // span_email.textContent="Email valide"
+          // span_email.style.color="green"
+          // span_email.style.fontSize="10px"
+          // span_email.style.fontStyle="italic"
+      }
+     
+      else{
+          email.style.border = "2px red solid";
+          // span_email.style.color="red"
+          // span_email.style.fontSize="10px"
+          // span_email.style.fontStyle="italic"
+          // span_email.textContent="Email invalide"
+     }
+  })
+
+} validation_email()
+ 
+
+ // validation numero tel
+
+ function validation_numero_tel(){
+  let MySpan_tel = document.querySelector("#MySpan_tel")
+  let span_tel = document.createElement("span");
+  let regex_tel =/^((\+243|00243|0)(81|82|97|99|80|84|85|89|90))([\d]{7})$/
+  let result_tel;
+  tel.addEventListener('blur',function(){
+      MySpan_tel.appendChild(span_tel);
+      result_tel=tel.value.trim();
+      if(regex_tel.test(result_tel)){
+          tel.style.border = "2px solid green";
+          // span_tel.textContent="Numéro valide"
+          // span_tel.style.color="green"
+          // span_tel.style.fontSize="10px"
+          // span_tel.style.fontStyle="italic"
+      }
+     
+      else{
+          tel.style.border = "2px red solid";
+          // span_tel.style.color="red"
+          // span_tel.style.fontSize="10px"
+          // span_tel.style.fontStyle="italic"
+          // span_tel.textContent="Numéro invalide"
+     }
+  })
+ 
+ } validation_numero_tel()
+
+// validation groupe
+
+function  validation_groupe(){
+     
+let MySpan_groupe = document.querySelector("#MySpan_groupe")
+let span_groupe = document.createElement("span_groupe");
+let regex_groupe =/^[a-zA-Z0-9]{1,10}$/
+let result_groupe;
+groupe.addEventListener('blur',function(){
+    MySpan_groupe.appendChild(span_groupe);
+    result_groupe=groupe.value.trim();
+    if(regex_groupe.test(result_groupe)){
+       groupe.style.border = "2px solid green";
+      //  span_groupe.textContent="Nom du groupe valide"
+      //  span_groupe.style.color="green"
+      //  span_groupe.style.fontSize="10px"
+      //  span_groupe.style.fontStyle="italic"
+    }
+   
+    else{
+        groupe.style.border = "2px red solid";
+        // span_groupe.style.color="red"
+        // span_groupe.style.fontSize="10px"
+        // span_groupe.style.fontStyle="italic"
+        // span_groupe.textContent="Nom  du groupe invalide"
+        
+   }
+})    
+}  validation_groupe()
+
+// validation bio
+
+ function validation_bio(){
+
+  let MySpan_bio = document.querySelector("#MySpan_bio")
+  let span_bio = document.createElement("span_bio");
+  let regex_bio =/^[a-zA-Z0-9]{1,200}$/
+  let result_bio ;
+  bio.addEventListener('blur',function(){
+      MySpan_bio .appendChild(span_bio );
+      result_bio =bio.value.trim();
+      if(regex_bio.test(result_bio )){
+        bio.style.border = "2px solid green";
+        // span_bio.textContent="Bio valide"
+        // span_bio.style.color="green"
+        // span_bio.style.fontSize="10px"
+        // span_bio.style.fontStyle="italic"
+      }
+     
+      else{
+          bio.style.border = "2px red solid";
+          // span_bio.style.color="red"
+          // span_bio.textContent="Bio invalide , veillez reduire nombre de caractères"
+          // span_bio.style.color="red"
+          // span_bio.style.fontSize="10px"
+          // span_bio.style.fontStyle="italic"
+     }a
+  })
+ } validation_bio()
+
 // input type file traitement
 
 let div = document.querySelector(".upload")
@@ -46,14 +230,16 @@ btn_reinit.addEventListener('click', function reinit(e){
         email.value="";
         bio.value="";
         file.value="";
-        span_tel.textContent="";
-        span_email.textContent="";
-        span_prenom.textContent="";
-        span_nom.textContent="";
-        tel.style.border = "";
-        email.style.border = "";
-        prenom.style.border = "";
-        nom.style.border = "";
+        // span_tel.textContent="";
+        // span_email.textContent="";
+        // span_prenom.textContent="";
+        // span_nom.textContent="";
+        tel.style.border = "1px solid rgb(196, 196, 196)";
+        email.style.border = "1px solid rgb(196, 196, 196)"
+        prenom.style.border = "1px solid rgb(196, 196, 196 )";
+        nom.style.border = "1px solid rgb(196, 196, 196 )";
+        groupe.style.border = "1px solid rgb(196, 196, 196)";
+        bio.style.border = "1px solid rgb(196, 196, 196)";
       } 
 })
 
@@ -70,6 +256,13 @@ btn_creer.addEventListener("click", function (e) {
     bio.value,
     picture
   );
+  tel.style.border = "1px solid rgb(196, 196, 196)";
+  email.style.border = "1px solid rgb(196, 196, 196)"
+  prenom.style.border = "1px solid rgb(196, 196, 196 )";
+  nom.style.border = "1px solid rgb(196, 196, 196 )";
+  groupe.style.border = "1px solid rgb(196, 196, 196)";
+  bio.style.border = "1px solid rgb(196, 196, 196)";
+
   listContact.push(contact);
   console.log(listContact);
   showContact();
