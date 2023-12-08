@@ -8,6 +8,10 @@ let listContenair = document.querySelector(".contact-list");
 let btn_creer = document.querySelector(".create");
 let btn_reinit = document.querySelector(".reinit");
 let listContact = [];
+let regex_tel =/^((\+243|00243|0)(81|82|83|97|99|80|84|85|89|90))([\d]{7})$/
+let regex_prenom =/^[a-zA-Z]{3,50}$/
+let regex_nom =/^[a-zA-Z]{3,50}$/
+let regex_email =/^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/
 let picture;
 // input type file traitement
 let div = document.querySelector(".upload");
@@ -36,18 +40,10 @@ function IdContact(prenom, nom, telephone, groupe, email, bio, photo) {
   this.bio = bio;
   this.photo = photo;
 }
-// let contact = new IdContact(
-//   prenom.value,
-//   nom.value,
-//   tel.value,
-//   groupe.value,
-//   email.value,
-//   bio.value,
-//   picture
-// );
 btn_reinit.addEventListener("click", function reinit(e) {
   e.preventDefault();
   clearField();
+  
 });
 btn_creer.addEventListener("click", function (e) {
   e.preventDefault();
@@ -55,6 +51,7 @@ btn_creer.addEventListener("click", function (e) {
   showContact();
   clearField();
   console.log(listContact);
+  
 });
 function showContact() {
   listContenair.innerHTML = "";
@@ -184,7 +181,7 @@ function clearField() {
   email.value = "";
   picture=""
   div.removeChild(img);
-  label.innerHTML = "Déposez la photo";
+  label.innerHTML = "Déposez la photo ici";
 }
 function addContact() {
   let contact = new IdContact(
@@ -211,3 +208,4 @@ function editContact(i) {
   );
   listContact[i] = contactModifie;
 }
+
