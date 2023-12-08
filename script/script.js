@@ -1,3 +1,4 @@
+let form=document.querySelector("form")
 let prenom = document.querySelector("#prenom");
 let nom = document.querySelector("#nom");
 let tel = document.querySelector("#tel");
@@ -36,15 +37,6 @@ function IdContact(prenom, nom, telephone, groupe, email, bio, photo) {
   this.bio = bio;
   this.photo = photo;
 }
-// let contact = new IdContact(
-//   prenom.value,
-//   nom.value,
-//   tel.value,
-//   groupe.value,
-//   email.value,
-//   bio.value,
-//   picture
-// );
 btn_reinit.addEventListener("click", function reinit(e) {
   e.preventDefault();
   clearField();
@@ -54,7 +46,6 @@ btn_creer.addEventListener("click", function (e) {
   addContact();
   showContact();
   clearField();
-  console.log(listContact);
 });
 function showContact() {
   listContenair.innerHTML = "";
@@ -121,7 +112,7 @@ function showContact() {
     infoContact.appendChild(biography);
     let pPhone = document.createElement("p");
     let pBio = document.createElement("p");
-    pPhone.innerHTML = `${element.telephone}   ${element.email}`;
+    pPhone.innerHTML = `${element.telephone} - ${element.email}`;
     pBio.innerHTML = element.bio;
     phoneEmail.appendChild(pPhone);
     biography.appendChild(pBio);
@@ -134,6 +125,7 @@ function showContact() {
       groupe.value = element.groupe;
       bio.value = element.bio;
       picture = element.photo;
+      div.appendChild(img);
       email.value = element.email;
       let btn_modifier = document.createElement("button");
       btn_modifier.innerHTML = "Mofifier";
@@ -160,54 +152,4 @@ function showContact() {
       });
     });
   }
-}
-function checkEmail(objet) {
-  if (email.value=listContact[i].objet) {
-    
-  } else {
-    
-  }
-}
-//supprimer un contact
-function deletContact(i) {
-  listContact.splice(i, 1);
-  showContact();
-}
-//vider les champs du formulaire
-function clearField() {
-  prenom.value = "";
-  nom.value = "";
-  tel.value = "";
-  groupe.value = "";
-  bio.value = "";
-  file.value = "";
-  email.value = "";
-  picture=""
-  div.removeChild(img);
-  label.innerHTML = "Déposez la photo";
-}
-function addContact() {
-  let contact = new IdContact(
-    prenom.value,
-    nom.value,
-    tel.value,
-    groupe.value,
-    email.value,
-    bio.value,
-    picture
-  );
-  listContact.push(contact);
-}
-//modifier un contact
-function editContact(i) {
-  let contactModifie = new IdContact(
-    prenom.value,
-    nom.value,
-    tel.value,
-    groupe.value,
-    email.value,
-    bio.value,
-    picture
-  );
-  listContact[i] = contactModifie;
 }
