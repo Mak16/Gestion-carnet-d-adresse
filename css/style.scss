@@ -89,14 +89,13 @@ script{
         font-weight: 700;
         color:white;
     }
-
     .form-contact{
         display: flex;
         flex-direction: column;
         padding-left: 20px;
         padding-right: 20px;
         gap:20px;
-        height: 808px;
+        height: 800px;;
         input{
             height:45px ;
             width:100% ;
@@ -120,16 +119,13 @@ script{
             height:138px ;
             width:100% ;
             border: 1px dashed rgba(196, 196, 196, 1);
-            #file{
-                opacity: 0;
-                width: 100%;
-                height: 100%;
-                
-            }
-            label{
-                color: #555555;
-                width: 100%;
-            }
+        }
+        img{
+            object-fit:contain;
+          
+        }
+        #file{
+            display: none;
         }
         label{
             font-weight:500;
@@ -305,6 +301,12 @@ script{
                 justify-content:space-around;  
                 align-items: center; 
                 width: 15%;
+        
+                .btn_edit{
+                   }
+                   
+                   .btn_delete{
+                   }
                }
         }
         .phone-num{
