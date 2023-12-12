@@ -13,11 +13,14 @@ let regex_prenom =/^[a-zA-Z]{3,50}$/
 let regex_nom =/^[a-zA-Z]{3,50}$/
 let regex_email =/^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/
 let picture;
+
 // input type file traitement
+
 let div = document.querySelector(".upload");
 let label = document.querySelector("#label_affichage");
 let file = document.querySelector("#file");
 let img = document.createElement("img");
+img.setAttribute('class','image')
 img.style.width = "100%";
 img.style.height = "100%";
 file.onchange = function (event) {
@@ -31,6 +34,7 @@ file.onchange = function (event) {
   };
   reader.readAsDataURL(fichier);
 };
+
 function IdContact(prenom, nom, telephone, groupe, email, bio, photo) {
   this.prenom = prenom;
   this.nom = nom;
@@ -67,13 +71,12 @@ function showContact() {
     photo.setAttribute("class", "photo");
     contactListItems.appendChild(photo);
     let image = document.createElement("img");
+    image.setAttribute('class','image')
     image.setAttribute("src", `${element.photo}`);
-    image.style.width = "200px";
-    image.style.height = "200px";
-    image.style.borderRadius = "50%";
     photo.appendChild(image);
     listContenair.appendChild(contactListItems);
     let infoContact = document.createElement("div");
+    infoContact.style.paddingTop="15px"
     infoContact.setAttribute("class", "info-contact");
     contactListItems.appendChild(infoContact);
     let nameContact = document.createElement("div");
@@ -86,9 +89,11 @@ function showContact() {
     personalInfo.appendChild(pPrenom);
     pPrenom.innerHTML = element.prenom;
     let pNom = document.createElement("p");
+    pNom.setAttribute('class','paragraph')
     personalInfo.appendChild(pNom);
     pNom.innerHTML = element.nom;
     let pGroupe = document.createElement("p");
+    pGroupe.setAttribute('class','paragraph')
     personalInfo.appendChild(pGroupe);
     pGroupe.innerHTML = ` ${element.groupe}`;
     //creation des boutons de modification et suppression
@@ -96,8 +101,12 @@ function showContact() {
     editDelete.setAttribute("class", "edit-delete");
     nameContact.appendChild(editDelete);
     let edit = document.createElement("button");
+    edit.style.border="1px solid white"
     edit.setAttribute("class", "btn_edit");
     let delet = document.createElement("button");
+    delet.style.border="1px solid white"
+    edit.style.backgroundColor="white"
+    delet.style.backgroundColor="white"
     delet.setAttribute("class", "btn_delete");
     let editIcon = document.createElement("img");
     editIcon.setAttribute("src", "images/Vector(1).svg");
@@ -118,6 +127,7 @@ function showContact() {
     infoContact.appendChild(biography);
     let pPhone = document.createElement("p");
     let pBio = document.createElement("p");
+    pBio.style.width="100%"
     pPhone.innerHTML = `${element.telephone}   ${element.email}`;
     pBio.innerHTML = element.bio;
     phoneEmail.appendChild(pPhone);
@@ -125,7 +135,7 @@ function showContact() {
     edit.addEventListener("click", function (e) {
       btn_creer.style.display = "none";
       btn_reinit.style.display = "none";
-      prenom.value = element.prenom;
+      btn_reinit.style.border="1px solid white"
       nom.value = element.nom;
       tel.value = element.telephone;
       groupe.value = element.groupe;
@@ -181,7 +191,7 @@ function clearField() {
   email.value = "";
   picture=""
   div.removeChild(img);
-  label.innerHTML = "Déposez la photo ici";
+  label.innerHTML =`Déposez la photo<br>ici`;
 }
 function addContact() {
   let contact = new IdContact(
