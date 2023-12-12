@@ -42,6 +42,7 @@ script {
   width: 100%;
   padding-left: 30px;
   gap: 24px;
+  margin-bottom: 1rem;
 }
 .carnet .title span {
   display: flex;
@@ -70,7 +71,7 @@ script {
     flex-direction: column;
     margin: auto;
     width: 90%;
-    gap: 1em;
+    gap: 6em;
   }
 }
 
@@ -78,6 +79,8 @@ script {
   width: 40%;
   border: 1px solid rgb(196, 196, 196);
   padding-bottom: 2em;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 @media all and (max-width: 850px) {
   .form {
@@ -102,7 +105,14 @@ script {
   padding-left: 20px;
   padding-right: 20px;
   gap: 20px;
-  height: 800px;
+  height: 60%;
+}
+@media all and (min-width: 800px) and (max-width: 1300px) {
+  .form .form-contact {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 }
 .form .form-contact input {
   height: 45px;
@@ -121,12 +131,19 @@ script {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 1rem;
   color: rgb(85, 85, 85);
   font-size: 16px;
   font-weight: 500;
-  height: 138px;
+  height: 150px;
   width: 100%;
   border: 1px dashed rgb(196, 196, 196);
+}
+@media all and (max-width: 850px) {
+  .form .form-contact .upload {
+    width: 100%;
+    height: 138px;
+  }
 }
 .form .form-contact img {
   -o-object-fit: contain;
@@ -141,18 +158,54 @@ script {
   color: rgb(8, 128, 214);
 }
 .form .form-contact .btn {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   gap: 36px;
   height: 44px;
   width: 18em;
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 910px) {
   .form .form-contact .btn {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    gap: 0.5em;
+    gap: 2em;
+  }
+}
+@media all and (max-width: 908px) {
+  .form .form-contact .btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+}
+@media all and (max-width: 888px) {
+  .form .form-contact .btn {
+    gap: 2em;
+  }
+}
+@media all and (max-width: 850px) {
+  .form .form-contact .btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1em;
+  }
+}
+@media all and (max-width: 370px) {
+  .form .form-contact .btn {
+    flex-direction: row;
+    margin-left: -0.4em;
+  }
+}
+@media all and (max-width: 369px) {
+  .form .form-contact .btn {
+    flex-direction: column;
+    margin-left: -0.4em;
   }
 }
 .form .form-contact .btn .create {
@@ -179,6 +232,24 @@ script {
     margin-left: -7em;
   }
 }
+@media all and (max-width: 910px) {
+  .form .form-contact .btn .create {
+    width: 8em;
+  }
+}
+@media all and (max-width: 888px) {
+  .form .form-contact .btn .create {
+    width: 6em;
+  }
+}
+@media all and (max-width: 850px) {
+  .form .form-contact .btn .create {
+    width: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .form .form-contact .btn .reinit {
   width: 8em;
   height: 44px;
@@ -203,6 +274,24 @@ script {
     margin-left: -7em;
   }
 }
+@media all and (max-width: 910px) {
+  .form .form-contact .btn .reinit {
+    width: 8em;
+  }
+}
+@media all and (max-width: 888px) {
+  .form .form-contact .btn .reinit {
+    width: 6em;
+  }
+}
+@media all and (max-width: 850px) {
+  .form .form-contact .btn .reinit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8em;
+  }
+}
 .form .form-contact .btn .btn_modifier {
   width: 8em;
   height: 44px;
@@ -211,6 +300,13 @@ script {
   font-size: 16px;
   font-weight: 500;
   color: white;
+}
+@media all and (max-width: 850px) {
+  .form .form-contact .btn .btn_modifier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 @media all and (max-width: 500px) {
   .form .form-contact .btn .btn_modifier {
@@ -236,6 +332,13 @@ script {
   font-weight: 500;
   color: white;
 }
+@media all and (max-width: 850px) {
+  .form .form-contact .btn .btn_annuler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 @media all and (max-width: 500px) {
   .form .form-contact .btn .btn_annuler {
     margin-left: 4.3em;
@@ -258,6 +361,7 @@ script {
 @media all and (max-width: 850px) {
   .contact-list {
     width: 100%;
+    margin-top: 1rem;
   }
 }
 .contact-list span {
@@ -283,6 +387,14 @@ script {
   border-left: 1px solid #DDDDDD;
   border-right: 1px solid #DDDDDD;
 }
+@media all and (max-width: 850px) {
+  .contact-list-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .contact-list-items .photo {
   display: flex;
   flex-direction: row;
@@ -293,17 +405,46 @@ script {
   width: 200px;
   height: 200px;
   background-color: white;
+  border-radius: 50%;
+  padding-left: 15px;
+}
+@media all and (max-width: 850px) {
+  .contact-list-items .photo {
+    padding-right: 10px;
+    margin-left: 10px;
+  }
+}
+.contact-list-items .photo .image {
+  width: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media all and (max-width: 850px) {
+  .contact-list-items .photo .image {
+    height: 120px;
+    width: 120px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 .contact-list-items .info-contact {
   display: flex;
   flex-direction: column;
   width: 70%;
   background-color: white;
+  gap: 1rem;
+}
+@media all and (max-width: 850px) {
+  .contact-list-items .info-contact {
+    margin-bottom: 15px;
+  }
 }
 .contact-list-items .info-contact .name-contact {
   display: flex;
   flex-direction: row;
   height: 20%;
+  gap: 5rem;
 }
 .contact-list-items .info-contact .name-contact .personal-info {
   display: flex;
@@ -313,12 +454,33 @@ script {
   gap: 10px;
   width: 85%;
 }
+@media all and (max-width: 850px) {
+  .contact-list-items .info-contact .name-contact .personal-info {
+    display: flex;
+    gap: 100px;
+  }
+}
+@media all and (max-width: 850px) {
+  .contact-list-items .info-contact .name-contact .personal-info .paragraph {
+    padding: 5px;
+    font-size: 1rem;
+  }
+}
 .contact-list-items .info-contact .name-contact .edit-delete {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 10px;
   align-items: center;
   width: 15%;
+}
+@media all and (max-width: 999px) {
+  .contact-list-items .info-contact .name-contact .edit-delete {
+    padding-right: 20px;
+  }
+}
+.contact-list-items .info-contact .name-contact .edit-delete img {
+  border: 1px solid white;
 }
 .contact-list-items .info-contact .phone-num {
   display: flex;
