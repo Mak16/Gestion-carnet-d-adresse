@@ -20,7 +20,6 @@ head{
 script{
     display: none;
 }
-
 .carnet{
     display: flex;
     flex-direction: column;
@@ -32,13 +31,12 @@ script{
         row-gap: 1em;
     }
     .title{
-
         background-color: rgba(8, 128, 214, 1);
         height:70px;
         width: 100%;
         padding-left: 30px ;
         gap:24px;
-
+        margin-bottom: 1rem;
         span{
             display: flex;
             flex-direction: column;
@@ -50,8 +48,7 @@ script{
             font-weight: 700;
             color: rgba(255, 255, 255, 1);
         }
-    }
-    
+    }  
 }
 .main{
     margin: auto;
@@ -66,14 +63,14 @@ script{
         flex-direction: column;
         margin: auto;
         width: 90%;
-        gap: 1em;
+        gap: 6em;
     }
 }
-
 .form{
     width: 40%;
     border: $borderStyle;
     padding-bottom: 2em;
+    height: fit-content;
     @media all and (max-width: 850px){
         width: 100%;
     }
@@ -89,14 +86,18 @@ script{
         font-weight: 700;
         color:white;
     }
-
     .form-contact{
         display: flex;
         flex-direction: column;
         padding-left: 20px;
         padding-right: 20px;
         gap:20px;
-        height: 808px;
+        height: 60%;
+        @media all and (min-width: 800px) and (max-width: 1300px){
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
         input{
             height:45px ;
             width:100% ;
@@ -114,22 +115,24 @@ script{
             justify-content: center;
             align-items: center;
             text-align: center;
+            margin-top: 1rem;
             color:rgba(85, 85, 85, 1);
             font-size: 16px;
             font-weight: 500;
-            height:138px ;
+            height: 150px;;
             width:100% ;
             border: 1px dashed rgba(196, 196, 196, 1);
-            #file{
-                opacity: 0;
-                width: 100%;
-                height: 100%;
-                
+            @media all and (max-width: 850px){
+                width:100%;
+                height:138px ;
             }
-            label{
-                color: #555555;
-                width: 100%;
-            }
+        }
+        img{
+            object-fit:contain;
+
+        }
+        #file{
+            display: none;
         }
         label{
             font-weight:500;
@@ -137,18 +140,45 @@ script{
             color:rgba(8, 128, 214, 1);
         }
         .btn{
+            margin-top: 1rem;    
             display: flex;
             flex-direction: row;
             gap:36px;
             height: 44px;
             width: 18em;
-            @media all and (max-width:500px) {
+            @media all and (max-width:910px) {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: center;
                 align-items: center;
-                gap: 0.5em;
+                gap: 2em; 
+            }
+            @media all and (max-width:908px) {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 1em;  
+            }
+            @media all and (max-width:888px) {
+                gap: 2em;
                 
             }
+            @media all and (max-width:850px) {
+                display: flex;
+                flex-direction: row;
+                justify-content:flex-start;
+                gap: 1em;
+            }
+            @media all and (max-width:370px) {
+                flex-direction:row;
+                margin-left: -0.4em;
+            }
+            @media all and (max-width:369px) {
+                flex-direction:column;
+                margin-left: -0.4em;
+            }
+            
             .create{
                 width: 8em;
                 height: 44px;
@@ -163,13 +193,29 @@ script{
                 }
                 @media all and (max-width:400px) {
                     margin-left: 1em;
+            
                     
                 }
+                
                 @media all and (max-width:300px) {
                     margin-left: -7em;
                     
                 }
-
+                @media all and (max-width:910px) {
+                    width: 8em; 
+                    
+                }
+                @media all and (max-width:888px) {
+                    width: 6em; 
+                    
+                }
+                @media all and (max-width:850px) {
+                    width: 8em; 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                }
             }
             
             .reinit{
@@ -192,6 +238,21 @@ script{
                     margin-left: -7em;
                     
                 }
+                @media all and (max-width:910px) {
+                    width: 8em; 
+                    
+                }
+                @media all and (max-width:888px) {
+                    width: 6em; 
+                    
+                }
+                @media all and (max-width:850px) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 8em; 
+                    
+                }
             }
             .btn_modifier{
                 width: 8em;
@@ -201,6 +262,11 @@ script{
                 font-size: 16px;
                 font-weight: 500;
                 color:white;
+                @media all and (max-width:850px) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; 
+                }
                 @media all and (max-width:500px) {
                     margin-left: 4.3em;
                     
@@ -222,20 +288,22 @@ script{
                 font-size: 16px;
                 font-weight: 500;
                 color:white;
+                @media all and (max-width:850px) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; 
+                }
                 @media all and (max-width:500px) {
-                    margin-left: 4.3em;
-                    
+                    margin-left: 4.3em; 
                 }
                 @media all and (max-width:400px) {
                     margin-left: 1em;
-                    
                 }
                 @media all and (max-width:300px) {
-                    margin-left: -7em;
-                    
+                    margin-left: -7em;   
                 }
             }
-        }
+        }   
     }
 }
 
@@ -243,6 +311,7 @@ script{
     width: 60%;
     @media all and (max-width: 850px){
         width: 100%;
+        margin-top:1rem;
     }
     span{
         display: flex;
@@ -269,6 +338,13 @@ script{
     border-bottom: 1px solid #DDDDDD;
     border-left: 1px solid #DDDDDD;
     border-right: 1px solid #DDDDDD;
+    @media all and (max-width: 850px){
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
     .photo{
         display: flex;
         flex-direction: row;
@@ -280,17 +356,38 @@ script{
         height: 200px;
         background-color:white;
         border-radius: 50%;
-        // border: 1px solid rgb(214, 177, 177);
+        padding-left: 15px;
+        @media all and (max-width: 850px){
+            padding-right: 10px;
+            margin-left: 10px;
+    
+        }
+        .image{
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            @media all and (max-width: 850px){
+                height: 120px;
+                width: 120px;
+                object-fit: cover;
+        
+            }
+        }
     }
     .info-contact{
         display: flex;
         flex-direction: column;
         width: 70%;
         background-color:white;
+        gap: 1rem;
+        @media all and (max-width: 850px){
+            margin-bottom: 15px;
+        }
         .name-contact{
             display: flex;
             flex-direction: row;
             height: 20%;
+            gap: 5rem;
             .personal-info{
                 display: flex;
                 flex-direction:row;
@@ -298,13 +395,31 @@ script{
                 align-items: center;
                 gap: 10px;
                 width: 85%;
+                @media all and (max-width: 850px){
+                    display: flex;
+                    gap: 100px;
+                }
+                .paragraph{
+                    @media all and (max-width: 850px){
+                        padding: 5px;
+                        font-size: 1rem;
+                    } 
+                }
+
             }
             .edit-delete{
                 display: flex;
                 flex-direction:row;
-                justify-content:space-around;  
+                justify-content:center;
+                gap:10px;  
                 align-items: center; 
                 width: 15%;
+                @media all and (max-width: 999px){
+                    padding-right: 20px;
+                }
+                img{
+                    border: 1px solid white;
+                }
                }
         }
         .phone-num{
@@ -327,3 +442,4 @@ script{
         }
     }
 }
+
