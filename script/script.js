@@ -14,9 +14,6 @@ const regex_nom =/^[a-zA-Z]{3,50}$/
 const regex_email =/^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/
 const regex_image = /\.(png|jpe?g)$/i;
 let picture;
-
-// input type file traitement
-
 let div = document.querySelector(".upload");
 let label = document.querySelector("#label_affichage");
 let file = document.querySelector("#file");
@@ -135,6 +132,7 @@ function showContact() {
       btn_creer.style.display = "none";
       btn_reinit.style.display = "none";
       btn_reinit.style.border="1px solid white"
+      prenom.value = element.prenom;
       nom.value = element.nom;
       tel.value = element.telephone;
       groupe.value = element.groupe;
@@ -149,6 +147,7 @@ function showContact() {
       btn_annuler.innerHTML = "Annuler";
       btn_annuler.setAttribute("class", "btn_annuler");
       let btn = document.querySelector(".btn");
+      edit.style.display='none'
       btn.appendChild(btn_modifier);
       btn.appendChild(btn_annuler);
       btn_modifier.addEventListener("click", function (e) {
@@ -168,54 +167,5 @@ function showContact() {
     });
   }
 }
-function checkEmail(objet) {
-  if (email.value=listContact[i].objet) {
-    
-  } else {
-    
-  }
-}
-//supprimer un contact
-function deletContact(i) {
-  listContact.splice(i, 1);
-  showContact();
-}
-//vider les champs du formulaire
-function clearField() {
-  prenom.value = "";
-  nom.value = "";
-  tel.value = "";
-  groupe.value = "";
-  bio.value = "";
-  file.value = "";
-  email.value = "";
-  picture=""
-  div.removeChild(img);
-  label.innerHTML = "Déposez la photo ici";
-}
-function addContact() {
-  let contact = new IdContact(
-    prenom.value,
-    nom.value,
-    tel.value,
-    groupe.value,
-    email.value,
-    bio.value,
-    picture
-  );
-  listContact.push(contact);
-}
-//modifier un contact
-function editContact(i) {
-  let contactModifie = new IdContact(
-    prenom.value,
-    nom.value,
-    tel.value,
-    groupe.value,
-    email.value,
-    bio.value,
-    picture
-  );
-  listContact[i] = contactModifie;
-}
+
 

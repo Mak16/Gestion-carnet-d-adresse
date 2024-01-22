@@ -63,7 +63,6 @@ function addContact() {
     email.value = element.email;
     return false;
   } else if (picture == undefined) {
-    console.log("in undefined");
     msgPhoto.innerHTML = "veillez charger une image";
     div.style.border = "2px solid red";
     return false;
@@ -71,7 +70,7 @@ function addContact() {
     let nomImage = file.files;
     let nomImg = nomImage.length > 0 ? nomImage[0].name : "";
     let estImage = regex_image.test(nomImg);
-    let tailleImg = nomImage.length > 0 ? taille[0].size : "";
+    let tailleImg = nomImage.length > 0 ? nomImage[0].size : "";
     if (!estImage) {
       msgPhoto.innerHTML = "Le format de l'image nest pas prise en charge";
       file.style.border = "2px solid red";

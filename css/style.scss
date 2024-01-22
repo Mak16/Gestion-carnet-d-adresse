@@ -326,14 +326,11 @@ script{
         background-color: rgba(8, 128, 214, 1);
     }
 }
-// début design contact-list
 .contact-list-items{
     display: flex;
     flex-direction: row;
     gap: 50px;
     width: 100%;
-    // height: 245px;
-    // padding: 20px 20px 0px 20px;
     background-color: white;
     border-bottom: 1px solid #DDDDDD;
     border-left: 1px solid #DDDDDD;
